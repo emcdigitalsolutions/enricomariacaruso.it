@@ -51,7 +51,7 @@
       <p class="hero-greeting">Ciao, sono</p>
       <h1 class="hero-name">Enrico Maria <span class="gradient-text">Caruso</span></h1>
       <p class="hero-title">Full Stack Developer & Docente di Scienze e Tecnologie Informatiche</p>
-      <p class="hero-subtitle">Trasformo idee in codice, esperienza in insegnamento.<br>Oltre 15 anni di passione per lo sviluppo software.</p>
+      <p class="hero-subtitle">Trasformo idee in codice, esperienza in insegnamento.<br>Oltre <span class="auto-exp">15</span> anni di passione per lo sviluppo software.</p>
       <div class="hero-buttons">
         <a href="#portfolio" class="btn btn-primary">
           <i class="fas fa-rocket"></i> I Miei Progetti
@@ -85,7 +85,7 @@
       <div class="about-grid">
         <div class="about-text fade-in">
           <p>
-            Sono un professionista IT con oltre <strong>15 anni di esperienza</strong> nello sviluppo software.
+            Sono un professionista IT con oltre <strong><span class="auto-exp">15</span> anni di esperienza</strong> nello sviluppo software.
             Attualmente <strong>docente di scuola secondaria di secondo grado</strong>, continuo a coltivare la mia
             passione per lo sviluppo web e la tecnologia attraverso progetti personali e collaborazioni professionali.
           </p>
@@ -557,7 +557,7 @@
             <i class="fas fa-envelope"></i>
           </a>
         </div>
-        <p class="footer-copy">&copy; 2026 Enrico Maria Caruso. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a></p>
+        <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Enrico Maria Caruso. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a></p>
       </div>
     </div>
   </footer>
@@ -579,5 +579,6 @@
   </button>
 
   <script src="script.js"></script>
+  <script>document.querySelectorAll('.auto-exp').forEach(function(el){el.textContent=new Date().getFullYear()-2011});</script>
 </body>
 </html>
