@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML5 Games - Enrico Maria Caruso</title>
-  <meta name="description" content="A collection of 10 HTML5 games built with Vanilla JavaScript and Canvas API. Zero dependencies, mobile-ready, playable in any browser.">
+  <title>Giochi HTML5 - Enrico Maria Caruso</title>
+  <meta name="description" content="Una collezione di 10 giochi HTML5 realizzati con JavaScript puro e Canvas API. Zero dipendenze, mobile-ready, giocabili da qualsiasi browser.">
   <meta name="author" content="Enrico Maria Caruso">
-  <meta property="og:title" content="HTML5 Games - Enrico Maria Caruso">
-  <meta property="og:description" content="10 HTML5 games built with Vanilla JS and Canvas API. Play them now!">
+  <meta property="og:title" content="Giochi HTML5 - Enrico Maria Caruso">
+  <meta property="og:description" content="10 giochi HTML5 realizzati con JS puro e Canvas API. Gioca ora!">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
@@ -267,13 +267,17 @@
         <span class="logo-bracket">&lt;</span>EC<span class="logo-bracket">/&gt;</span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#chi-sono">Chi Sono</a></li>
-        <li><a href="index.html#competenze">Competenze</a></li>
-        <li><a href="index.html#esperienze">Esperienze</a></li>
-        <li><a href="index.html#portfolio">Portfolio</a></li>
-        <li><a href="games.html" class="active">Games</a></li>
-        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="index.html#chi-sono" data-i18n="nav.chi-sono">Chi Sono</a></li>
+        <li><a href="index.html#competenze" data-i18n="nav.competenze">Competenze</a></li>
+        <li><a href="index.html#esperienze" data-i18n="nav.esperienze">Esperienze</a></li>
+        <li><a href="index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="games.html" class="active" data-i18n="nav.games">Games</a></li>
+        <li><a href="index.html#contatti" data-i18n="nav.contatti">Contatti</a></li>
       </ul>
+      <button class="lang-switch" id="langSwitch" aria-label="Cambia lingua" data-i18n-aria="langswitch-aria">
+        <span class="lang-option active" data-lang="it">IT</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <span></span>
         <span></span>
@@ -289,14 +293,14 @@
       <div class="hero-shape hero-shape-2"></div>
     </div>
     <div class="games-hero-content">
-      <h1><span class="gradient-text">HTML5 Games</span></h1>
-      <p>A collection of 10 arcade games built from scratch with Vanilla JavaScript and Canvas API. Zero dependencies, single-file, mobile-responsive &mdash; playable right in your browser.</p>
+      <h1><span class="gradient-text">Giochi HTML5</span></h1>
+      <p data-i18n="games.hero-desc">Una collezione di 10 giochi arcade realizzati da zero con JavaScript puro e Canvas API. Zero dipendenze, file singolo, mobile-responsive &mdash; giocabili direttamente dal browser.</p>
       <div class="tech-badges">
         <span>Vanilla JavaScript</span>
         <span>HTML5 Canvas</span>
         <span>Web Audio API</span>
-        <span>Zero Dependencies</span>
-        <span>Mobile Ready</span>
+        <span data-i18n="games.zero-deps">Zero Dipendenze</span>
+        <span data-i18n="games.mobile">Mobile Ready</span>
       </div>
     </div>
   </section>
@@ -312,12 +316,12 @@
         </div>
         <div class="game-body">
           <h3>Stack Tower</h3>
-          <p>Tap to drop blocks and build the tallest tower. Perfect alignment triggers combo bonuses. 3 skins, progressive difficulty.</p>
+          <p data-i18n="games.stack-desc">Tocca per far cadere i blocchi e costruisci la torre pi&ugrave; alta. L'allineamento perfetto attiva bonus combo. 3 skin, difficolt&agrave; progressiva.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/stack-tower/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -329,12 +333,12 @@
         </div>
         <div class="game-body">
           <h3>Color Switch</h3>
-          <p>Jump through obstacles matching your ball's color. Collect stars to switch colors. 3 obstacle types, 4-color system.</p>
+          <p data-i18n="games.color-desc">Salta attraverso gli ostacoli del colore della tua palla. Raccogli le stelle per cambiare colore. 3 tipi di ostacoli, sistema a 4 colori.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/color-switch/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -346,12 +350,12 @@
         </div>
         <div class="game-body">
           <h3>Neon Invaders</h3>
-          <p>Destroy waves of aliens before they reach the bottom. Shields, UFO bonuses, 3 alien types, progressive waves.</p>
+          <p data-i18n="games.invaders-desc">Distruggi le ondate di alieni prima che raggiungano il fondo. Scudi, bonus UFO, 3 tipi di alieni, ondate progressive.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/neon-invaders/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -363,12 +367,12 @@
         </div>
         <div class="game-body">
           <h3>Void Drift</h3>
-          <p>Navigate asteroid fields, destroy rocks and survive wave after wave. Inertia physics, screen wrap, vector graphics.</p>
+          <p data-i18n="games.void-desc">Naviga tra campi di asteroidi, distruggi rocce e sopravvivi ondata dopo ondata. Fisica inerziale, screen wrap, grafica vettoriale.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/void-drift/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -380,12 +384,12 @@
         </div>
         <div class="game-body">
           <h3>Neon Breaker</h3>
-          <p>Break all the bricks with the ball. 4 brick types, 6 power-ups, 6 levels, multi-ball action and combo scoring.</p>
+          <p data-i18n="games.breaker-desc">Rompi tutti i mattoni con la palla. 4 tipi di mattoni, 6 power-up, 6 livelli, multi-ball e punteggio combo.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>6 Power-ups</span>
           </div>
           <a href="https://enrix84.github.io/neon-breaker/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -397,12 +401,12 @@
         </div>
         <div class="game-body">
           <h3>Neon Snake</h3>
-          <p>Eat food to grow longer without hitting yourself. Bonus food for extra points. Wall wrap on Easy mode, D-pad on mobile.</p>
+          <p data-i18n="games.snake-desc">Mangia il cibo per crescere senza colpirti. Cibo bonus per punti extra. Wall wrap in modalit&agrave; facile, D-pad su mobile.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/neon-snake/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -414,12 +418,12 @@
         </div>
         <div class="game-body">
           <h3>Neon Runner</h3>
-          <p>Jump over obstacles and collect coins in this endless runner. Double jump, progressive speed, milestone rewards.</p>
+          <p data-i18n="games.runner-desc">Salta gli ostacoli e raccogli monete in questo endless runner. Doppio salto, velocit&agrave; progressiva, ricompense milestone.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/neon-runner/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -431,12 +435,12 @@
         </div>
         <div class="game-body">
           <h3>Neon Blocks</h3>
-          <p>Complete rows to clear them and score combos. 7 tetrominos, ghost piece, wall kicks, bag randomizer.</p>
+          <p data-i18n="games.blocks-desc">Completa le righe per cancellarle e fare combo. 7 tetromini, pezzo fantasma, wall kick, randomizzazione bag.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/neon-blocks/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -448,12 +452,12 @@
         </div>
         <div class="game-body">
           <h3>Neon 2048</h3>
-          <p>Slide tiles to merge equal numbers and reach 2048. Undo system, dynamic grid size, endless mode after winning.</p>
+          <p data-i18n="games.2048-desc">Scorri le tessere per fondere numeri uguali e raggiungere 2048. Sistema di undo, griglia dinamica, modalit&agrave; infinita dopo la vittoria.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/neon-2048/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -465,12 +469,12 @@
         </div>
         <div class="game-body">
           <h3>Neon Pong</h3>
-          <p>Move your paddle and beat the AI. Angle-based bouncing, ball trail effect, progressive speed per rally.</p>
+          <p data-i18n="games.pong-desc">Muovi la racchetta e batti l'IA. Rimbalzo basato sull'angolo, effetto scia della palla, velocit&agrave; progressiva per scambio.</p>
           <div class="game-tags">
             <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
           </div>
           <a href="https://enrix84.github.io/neon-pong/" target="_blank" rel="noopener" class="game-play-btn">
-            <i class="fas fa-play"></i> Play Now
+            <i class="fas fa-play"></i> <span data-i18n="games.play">Gioca Ora</span>
           </a>
         </div>
       </div>
@@ -485,7 +489,7 @@
         <div class="footer-logo">
           <span class="logo-bracket">&lt;</span>EC<span class="logo-bracket">/&gt;</span>
         </div>
-        <p class="footer-text">Progettato e sviluppato con <span class="heart">&hearts;</span> da Enrico Maria Caruso</p>
+        <p class="footer-text" data-i18n-html="footer.text-html">Progettato e sviluppato con <span class="heart">&hearts;</span> da Enrico Maria Caruso</p>
         <div class="footer-social">
           <a href="https://github.com/enrix84" target="_blank" rel="noopener" aria-label="GitHub">
             <i class="fab fa-github"></i>
@@ -500,17 +504,18 @@
             <i class="fas fa-envelope"></i>
           </a>
         </div>
-        <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Enrico Maria Caruso. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a></p>
-        <a href="https://www.enricomariacaruso.it" target="_blank" rel="noopener" title="Progettato e Sviluppato da Enrico Maria Caruso" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;opacity:0.4;font-size:11px;text-decoration:none;color:inherit;"><span>Progettato e Sviluppato da</span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" height="18"><defs><linearGradient id="emcG" x1="0" y1="0" x2="120" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="45%" stop-color="#06d6a0"/><stop offset="100%" stop-color="#e8e8f0"/></linearGradient><linearGradient id="emcIG" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="100%" stop-color="#06d6a0"/></linearGradient></defs><path d="M4,4 H24 L32,8 L24,12 H4 A4,4 0 0,1 4,4Z" fill="url(#emcIG)"/><path d="M4,15 H20 L28,19 L20,23 H4 A4,4 0 0,1 4,15Z" fill="url(#emcIG)" opacity="0.85"/><path d="M4,26 H24 L32,30 L24,34 H4 A4,4 0 0,1 4,26Z" fill="url(#emcIG)"/><text x="46" y="27" font-family="'Space Grotesk','Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="700" fill="url(#emcG)" letter-spacing="3">EMC</text></svg></a>
+        <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Enrico Maria Caruso. <span data-i18n="footer.rights">Tutti i diritti riservati.</span> | <a href="cookie-policy.html">Cookie Policy</a></p>
+        <a href="https://www.enricomariacaruso.it" target="_blank" rel="noopener" title="Progettato e Sviluppato da Enrico Maria Caruso" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;opacity:0.4;font-size:11px;text-decoration:none;color:inherit;"><span data-i18n="footer.designed-by">Progettato e Sviluppato da</span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" height="18"><defs><linearGradient id="emcG" x1="0" y1="0" x2="120" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="45%" stop-color="#06d6a0"/><stop offset="100%" stop-color="#e8e8f0"/></linearGradient><linearGradient id="emcIG" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="100%" stop-color="#06d6a0"/></linearGradient></defs><path d="M4,4 H24 L32,8 L24,12 H4 A4,4 0 0,1 4,4Z" fill="url(#emcIG)"/><path d="M4,15 H20 L28,19 L20,23 H4 A4,4 0 0,1 4,15Z" fill="url(#emcIG)" opacity="0.85"/><path d="M4,26 H24 L32,30 L24,34 H4 A4,4 0 0,1 4,26Z" fill="url(#emcIG)"/><text x="46" y="27" font-family="'Space Grotesk','Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="700" fill="url(#emcG)" letter-spacing="3">EMC</text></svg></a>
       </div>
     </div>
   </footer>
 
   <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" aria-label="Torna su">
+  <button class="back-to-top" id="backToTop" aria-label="Torna su" data-i18n-aria="backtop-aria">
     <i class="fas fa-chevron-up"></i>
   </button>
 
+  <script src="i18n.js"></script>
   <script>
     // Mobile nav toggle
     const navToggle = document.getElementById('navToggle');

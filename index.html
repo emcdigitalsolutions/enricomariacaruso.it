@@ -25,13 +25,17 @@
         <span class="logo-bracket">&lt;</span>EC<span class="logo-bracket">/&gt;</span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#chi-sono">Chi Sono</a></li>
-        <li><a href="#competenze">Competenze</a></li>
-        <li><a href="#esperienze">Esperienze</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="games.html">Games</a></li>
-        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="#chi-sono" data-i18n="nav.chi-sono">Chi Sono</a></li>
+        <li><a href="#competenze" data-i18n="nav.competenze">Competenze</a></li>
+        <li><a href="#esperienze" data-i18n="nav.esperienze">Esperienze</a></li>
+        <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="games.html" data-i18n="nav.games">Games</a></li>
+        <li><a href="#contatti" data-i18n="nav.contatti">Contatti</a></li>
       </ul>
+      <button class="lang-switch" id="langSwitch" aria-label="Cambia lingua" data-i18n-aria="langswitch-aria">
+        <span class="lang-option active" data-lang="it">IT</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <span></span>
         <span></span>
@@ -49,16 +53,16 @@
       <div class="hero-grid"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-greeting">Ciao, sono</p>
+      <p class="hero-greeting" data-i18n="hero.greeting">Ciao, sono</p>
       <h1 class="hero-name">Enrico Maria <span class="gradient-text">Caruso</span></h1>
-      <p class="hero-title">Full Stack Developer & Docente di Scienze e Tecnologie Informatiche</p>
-      <p class="hero-subtitle">Trasformo idee in codice, esperienza in insegnamento.<br>Oltre <span class="auto-exp">15</span> anni di passione per lo sviluppo software.</p>
+      <p class="hero-title" data-i18n="hero.title">Full Stack Developer & Docente di Scienze e Tecnologie Informatiche</p>
+      <p class="hero-subtitle" data-i18n-html="hero.subtitle-html">Trasformo idee in codice, esperienza in insegnamento.<br>Oltre <span class="auto-exp">15</span> anni di passione per lo sviluppo software.</p>
       <div class="hero-buttons">
         <a href="#portfolio" class="btn btn-primary">
-          <i class="fas fa-rocket"></i> I Miei Progetti
+          <i class="fas fa-rocket"></i> <span data-i18n="hero.btn-projects">I Miei Progetti</span>
         </a>
         <a href="#contatti" class="btn btn-outline">
-          <i class="fas fa-envelope"></i> Contattami
+          <i class="fas fa-envelope"></i> <span data-i18n="hero.btn-contact">Contattami</span>
         </a>
       </div>
       <div class="hero-tech">
@@ -70,7 +74,7 @@
         <span>Azure</span>
       </div>
     </div>
-    <a href="#chi-sono" class="scroll-indicator" aria-label="Scorri verso il basso">
+    <a href="#chi-sono" class="scroll-indicator" aria-label="Scorri verso il basso" data-i18n-aria="hero.scroll-aria">
       <div class="scroll-mouse">
         <div class="scroll-wheel"></div>
       </div>
@@ -81,22 +85,22 @@
   <section class="section" id="chi-sono">
     <div class="container">
       <h2 class="section-title fade-in">
-        <span class="section-number">01.</span> Chi Sono
+        <span class="section-number">01.</span> <span data-i18n="about.title">Chi Sono</span>
       </h2>
       <div class="about-grid">
         <div class="about-text fade-in">
-          <p>
+          <p data-i18n-html="about.p1-html">
             Sono un professionista IT con oltre <strong><span class="auto-exp">15</span> anni di esperienza</strong> nello sviluppo software.
             Attualmente <strong>docente di scuola secondaria di secondo grado</strong>, continuo a coltivare la mia
             passione per lo sviluppo web e la tecnologia attraverso progetti personali e collaborazioni professionali.
           </p>
-          <p>
+          <p data-i18n-html="about.p2-html">
             Il mio percorso mi ha portato dalla <strong>Scuola Normale Superiore di Pisa</strong> al <strong>CNR</strong>,
             fino ad aziende leader nell'<strong>Industria 4.0</strong>, dove ho maturato competenze in ambito IoT,
             Cloud Computing e sviluppo full-stack. Ho collaborato a progetti europei, piattaforme sanitarie regionali
             e soluzioni di Digital Twin per l'industria manifatturiera.
           </p>
-          <p>
+          <p data-i18n="about.p3">
             Oggi unisco la mia esperienza tecnica alla passione per l'insegnamento, formando le nuove generazioni
             di professionisti digitali e sviluppando al contempo soluzioni web moderne e innovative.
           </p>
@@ -109,7 +113,7 @@
             <div class="about-details">
               <div class="about-detail">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Campobello di Licata (AG), Sicilia</span>
+                <span data-i18n="about.location">Campobello di Licata (AG), Sicilia</span>
               </div>
               <div class="about-detail">
                 <i class="fas fa-envelope"></i>
@@ -117,11 +121,11 @@
               </div>
               <div class="about-detail">
                 <i class="fas fa-graduation-cap"></i>
-                <span>Laurea Specialistica in Tecnologie Informatiche</span>
+                <span data-i18n="about.degree">Laurea Specialistica in Tecnologie Informatiche</span>
               </div>
               <div class="about-detail">
                 <i class="fas fa-university"></i>
-                <span>Universit&agrave; di Pisa</span>
+                <span data-i18n="about.university">Universit&agrave; di Pisa</span>
               </div>
               <div class="about-detail">
                 <i class="fab fa-github"></i>
@@ -133,22 +137,22 @@
               </div>
               <div class="about-detail">
                 <i class="fas fa-blog"></i>
-                <a href="https://xbrowser.altervista.org/" target="_blank" rel="noopener">Il mio Blog</a>
+                <a href="https://xbrowser.altervista.org/" target="_blank" rel="noopener" data-i18n="about.blog">Il mio Blog</a>
               </div>
             </div>
           </div>
           <div class="about-stats">
             <div class="stat-item">
               <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Anni di Esperienza</span>
+              <span class="stat-label" data-i18n="about.stat-exp">Anni di Esperienza</span>
             </div>
             <div class="stat-item">
               <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Progetti Realizzati</span>
+              <span class="stat-label" data-i18n="about.stat-projects">Progetti Realizzati</span>
             </div>
             <div class="stat-item">
               <span class="stat-number" data-count="20">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Tecnologie</span>
+              <span class="stat-label" data-i18n="about.stat-tech">Tecnologie</span>
             </div>
           </div>
         </div>
@@ -160,7 +164,7 @@
   <section class="section section-alt" id="competenze">
     <div class="container">
       <h2 class="section-title fade-in">
-        <span class="section-number">02.</span> Competenze
+        <span class="section-number">02.</span> <span data-i18n="skills.title">Competenze</span>
       </h2>
       <div class="skills-grid">
         <div class="skill-card fade-in">
@@ -205,12 +209,12 @@
           <div class="skill-tags">
             <span>Modbus</span><span>OPC UA</span><span>MQTT</span>
             <span>Digital Twin</span><span>NodeRED</span><span>Edge Computing</span>
-            <span>Telemetria</span>
+            <span data-i18n="skills.telemetry">Telemetria</span>
           </div>
         </div>
         <div class="skill-card fade-in">
           <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
-          <h3>Management & Metodologie</h3>
+          <h3 data-i18n="skills.management">Management & Metodologie</h3>
           <div class="skill-tags">
             <span>Agile / Scrum</span><span>Kanban</span><span>Project Management</span>
             <span>Trello</span><span>Azure DevOps</span><span>Team Leading</span>
@@ -224,25 +228,25 @@
   <section class="section" id="esperienze">
     <div class="container">
       <h2 class="section-title fade-in">
-        <span class="section-number">03.</span> Esperienze
+        <span class="section-number">03.</span> <span data-i18n="exp.title">Esperienze</span>
       </h2>
       <div class="timeline">
         <div class="timeline-item fade-in">
           <div class="timeline-marker current"></div>
           <div class="timeline-content">
-            <div class="timeline-badge">Attuale</div>
-            <h3>Docente di Scuola Secondaria di II Grado</h3>
+            <div class="timeline-badge" data-i18n="exp.current">Attuale</div>
+            <h3 data-i18n="exp.job1-title">Docente di Scuola Secondaria di II Grado</h3>
             <p class="timeline-company"><i class="fas fa-school"></i> <a href="https://www.saettalivatinoravanusa.edu.it/" target="_blank" rel="noopener">I.I.S.S. "Saetta e Livatino" &ndash; Ravanusa</a></p>
-            <p>Insegnamento delle discipline informatiche, formando le nuove generazioni di professionisti digitali.</p>
+            <p data-i18n="exp.job1-desc">Insegnamento delle discipline informatiche, formando le nuove generazioni di professionisti digitali.</p>
           </div>
         </div>
         <div class="timeline-item fade-in">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-date">2019 &ndash; 2025</div>
-            <h3>IoT Specialist &ndash; Project Manager &amp; Senior Developer</h3>
+            <h3 data-i18n="exp.job2-title">IoT Specialist &ndash; Project Manager &amp; Senior Developer</h3>
             <p class="timeline-company"><i class="fas fa-building"></i> Alleantia SRL, Pisa</p>
-            <p>Responsabile tecnico e sviluppatore di piattaforme Cloud e del software Alleantia ISC.
+            <p data-i18n="exp.job2-desc">Responsabile tecnico e sviluppatore di piattaforme Cloud e del software Alleantia ISC.
                Project Manager del progetto EasyVia. Sviluppo di soluzioni Digital Twin e Edge Computing
                con protocolli industriali e piattaforme IoT in cloud (Azure, AWS, Thingworx).</p>
           </div>
@@ -251,9 +255,9 @@
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-date">2015 &ndash; 2019</div>
-            <h3>Senior Software Developer</h3>
+            <h3 data-i18n="exp.job3-title">Senior Software Developer</h3>
             <p class="timeline-company"><i class="fas fa-building"></i> Consorzio Metis, Pisa</p>
-            <p>Sviluppatore senior del Sistema Informativo Sanitario della Prevenzione Collettiva (SISPC)
+            <p data-i18n="exp.job3-desc">Sviluppatore senior del Sistema Informativo Sanitario della Prevenzione Collettiva (SISPC)
                di Regione Toscana.</p>
           </div>
         </div>
@@ -261,9 +265,9 @@
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-date">2012 &ndash; 2015</div>
-            <h3>Research Fellow</h3>
+            <h3 data-i18n="exp.job4-title">Research Fellow</h3>
             <p class="timeline-company"><i class="fas fa-university"></i> Scuola Normale Superiore di Pisa</p>
-            <p>Progettazione di tecnologie informatiche per il censimento e la catalogazione di codici manoscritti.
+            <p data-i18n="exp.job4-desc">Progettazione di tecnologie informatiche per il censimento e la catalogazione di codici manoscritti.
                Implementazione di Rich Text Editor per la trascrizione di iscrizioni arabiche preislamiche
                nel progetto DASI.</p>
           </div>
@@ -272,9 +276,9 @@
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-date">2010 &ndash; 2012</div>
-            <h3>Software Developer</h3>
+            <h3 data-i18n="exp.job5-title">Software Developer</h3>
             <p class="timeline-company"><i class="fas fa-university"></i> Scuola Normale Superiore &amp; Liberologico SRL</p>
-            <p>Sviluppatore nel progetto SIUSA e nel progetto CUSTOM, piattaforma Cloud Computing
+            <p data-i18n="exp.job5-desc">Sviluppatore nel progetto SIUSA e nel progetto CUSTOM, piattaforma Cloud Computing
                per servizi turistico-culturali.</p>
           </div>
         </div>
@@ -282,27 +286,27 @@
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-date">2008 &ndash; 2010</div>
-            <h3>Junior Software Developer</h3>
+            <h3 data-i18n="exp.job6-title">Junior Software Developer</h3>
             <p class="timeline-company"><i class="fas fa-flask"></i> CNR &ndash; Consiglio Nazionale delle Ricerche, Pisa</p>
-            <p>Sviluppatore nel progetto Europeo EFG (European Film Gateway).
+            <p data-i18n="exp.job6-desc">Sviluppatore nel progetto Europeo EFG (European Film Gateway).
                Information Retrieval, protocollo OAI-PMH e sviluppo in Java per il sistema Metapub.</p>
           </div>
         </div>
       </div>
 
-      <h3 class="subsection-title fade-in"><i class="fas fa-graduation-cap"></i> Formazione</h3>
+      <h3 class="subsection-title fade-in"><i class="fas fa-graduation-cap"></i> <span data-i18n="edu.title">Formazione</span></h3>
       <div class="education-grid">
         <div class="education-card fade-in">
-          <h4>Laurea Specialistica in Tecnologie Informatiche</h4>
-          <p class="edu-institution">Universit&agrave; di Pisa &ndash; Dipartimento di Informatica</p>
+          <h4 data-i18n="edu.degree1">Laurea Specialistica in Tecnologie Informatiche</h4>
+          <p class="edu-institution" data-i18n="edu.degree1-inst">Universit&agrave; di Pisa &ndash; Dipartimento di Informatica</p>
         </div>
         <div class="education-card fade-in">
-          <h4>Laurea in Informatica</h4>
-          <p class="edu-institution">Universit&agrave; di Pisa &ndash; Dipartimento di Informatica</p>
+          <h4 data-i18n="edu.degree2">Laurea in Informatica</h4>
+          <p class="edu-institution" data-i18n="edu.degree2-inst">Universit&agrave; di Pisa &ndash; Dipartimento di Informatica</p>
         </div>
         <div class="education-card fade-in">
-          <h4>Perito Capotecnico Informatico</h4>
-          <p class="edu-institution">ITIS &ldquo;E. Torricelli&rdquo; &ndash; Sant'Agata di Militello (ME)</p>
+          <h4 data-i18n="edu.degree3">Perito Capotecnico Informatico</h4>
+          <p class="edu-institution" data-i18n="edu.degree3-inst">ITIS &ldquo;E. Torricelli&rdquo; &ndash; Sant'Agata di Militello (ME)</p>
         </div>
       </div>
     </div>
@@ -312,9 +316,9 @@
   <section class="section section-alt" id="portfolio">
     <div class="container">
       <h2 class="section-title fade-in">
-        <span class="section-number">04.</span> Portfolio
+        <span class="section-number">04.</span> <span data-i18n="portfolio.title">Portfolio</span>
       </h2>
-      <p class="section-subtitle fade-in">Una selezione dei progetti che ho realizzato</p>
+      <p class="section-subtitle fade-in" data-i18n="portfolio.subtitle">Una selezione dei progetti che ho realizzato</p>
 
       <div class="portfolio-grid">
 
@@ -337,7 +341,7 @@
           </div>
           <div class="project-info">
             <h3>Grandi Firme di Fuc&agrave;</h3>
-            <p>
+            <p data-i18n="proj.gf-desc">
               Sito e-commerce per un outlet di abbigliamento firmato per bambini e ragazzi (0-16 anni).
               Design elegante gold &amp; dark con integrazione Stripe per l'acquisto di Gift Card,
               galleria collezioni, store locator con mappe e sistema di contatto.
@@ -348,7 +352,7 @@
             </div>
             <div class="project-links">
               <a href="https://www.grandifirmedifuca.it/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-external-link-alt"></i> Visita il Sito
+                <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.gf-link">Visita il Sito</span>
               </a>
             </div>
           </div>
@@ -373,7 +377,7 @@
           </div>
           <div class="project-info">
             <h3>Prenoty</h3>
-            <p>
+            <p data-i18n="proj.prenoty-desc">
               Applicazione mobile e web per la prenotazione di appuntamenti.
               Connette utenti e attivit&agrave; commerciali (parrucchieri, saloni, ecc.) con un sistema
               di booking in tempo reale, recensioni verificate, notifiche automatiche e chat integrata.
@@ -385,7 +389,7 @@
             </div>
             <div class="project-links">
               <a href="https://prenoty-site.pages.dev/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-external-link-alt"></i> Visita il Sito
+                <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.prenoty-link">Visita il Sito</span>
               </a>
             </div>
           </div>
@@ -410,7 +414,7 @@
           </div>
           <div class="project-info">
             <h3>Klein Baby</h3>
-            <p>
+            <p data-i18n="proj.kb-desc">
               Sito vetrina per negozio di abbigliamento bambini e ragazzi (0-16 anni).
               Design vivace e colorato con palette rosa &amp; blu, animazioni confetti,
               sistema Gift Card con pagamento Stripe, galleria collezioni, mappa del negozio
@@ -422,7 +426,7 @@
             </div>
             <div class="project-links">
               <a href="https://www.kleinbaby.it/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-external-link-alt"></i> Visita il Sito
+                <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.kb-link">Visita il Sito</span>
               </a>
             </div>
           </div>
@@ -447,7 +451,7 @@
           </div>
           <div class="project-info">
             <h3>StockFlow ERP</h3>
-            <p>
+            <p data-i18n="proj.sf-desc">
               Gestionale cloud per il retail: magazzino, vendite, gift card e sito web integrati
               in un'unica piattaforma SaaS multi-tenant. Include inventario con varianti (taglie, colori),
               POS, trasferimenti inter-negozio, programma fedelt&agrave;, gift card digitali con Stripe,
@@ -459,16 +463,16 @@
             </div>
             <div class="project-links">
               <a href="https://enrix84.github.io/stockflowERP-sito/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-external-link-alt"></i> Sito Prodotto
+                <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.sf-link1">Sito Prodotto</span>
               </a>
               <a href="https://erp.enricomariacaruso.it/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-external-link-alt"></i> App Demo
+                <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.sf-link2">App Demo</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 5: Stack Tower (HTML5 Game) -->
+        <!-- Project 5: HTML5 Games Collection -->
         <div class="project-card fade-in">
           <div class="browser-mockup">
             <div class="browser-header">
@@ -478,30 +482,38 @@
                 <span class="dot-green"></span>
               </div>
               <div class="browser-url">
-                <i class="fas fa-lock"></i> enrix84.github.io/stack-tower
+                <i class="fas fa-lock"></i> enricomariacaruso.it/games
               </div>
             </div>
-            <div class="browser-content">
-              <img src="images/stack-tower.png" alt="Stack Tower - HTML5 Game Screenshot" class="browser-screenshot">
+            <div class="browser-content" style="background:linear-gradient(135deg,#0a0a1a 0%,#1a0a2e 50%,#0a1a2e 100%);display:flex;align-items:center;justify-content:center;min-height:200px;gap:12px;flex-wrap:wrap;padding:24px">
+              <span style="font-size:2.4rem">🏗️</span>
+              <span style="font-size:2.4rem">🎨</span>
+              <span style="font-size:2.4rem">👾</span>
+              <span style="font-size:2.4rem">🚀</span>
+              <span style="font-size:2.4rem">🧱</span>
+              <span style="font-size:2.4rem">🐍</span>
+              <span style="font-size:2.4rem">🏃</span>
+              <span style="font-size:2.4rem">🧩</span>
+              <span style="font-size:2.4rem">🔢</span>
+              <span style="font-size:2.4rem">🏓</span>
             </div>
           </div>
           <div class="project-info">
-            <h3>Stack Tower &ndash; HTML5 Game</h3>
-            <p>
-              Gioco hyper-casual HTML5 sviluppato in Vanilla JavaScript e Canvas API.
-              Il giocatore tocca per impilare blocchi su una torre: le parti sporgenti vengono tagliate,
-              aumentando progressivamente la difficolt&agrave;.
-              3 skin (Neon Night, Golden Hour, Ice Cold), leaderboard locale,
-              combo &ldquo;Perfect Stack&rdquo;, suoni procedurali via Web Audio API,
-              AdSense ready. Zero dipendenze, singolo file HTML.
+            <h3>HTML5 Games Collection</h3>
+            <p data-i18n="proj.games-desc">
+              Collezione di 10 giochi arcade HTML5 sviluppati in Vanilla JavaScript e Canvas API.
+              Stack Tower, Color Switch, Neon Invaders, Void Drift, Neon Breaker, Neon Snake,
+              Neon Runner, Neon Blocks, Neon 2048 e Neon Pong. Ogni gioco &egrave; un singolo file HTML
+              con zero dipendenze, skin neon personalizzabili, leaderboard locale, suoni procedurali
+              via Web Audio API e design mobile-first.
             </p>
             <div class="project-tech">
               <span>JavaScript</span><span>HTML5 Canvas</span><span>Web Audio API</span>
-              <span>CSS3</span><span>localStorage</span>
+              <span>CSS3</span><span>localStorage</span><span>Mobile-first</span>
             </div>
             <div class="project-links">
-              <a href="https://enrix84.github.io/stack-tower/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-gamepad"></i> Gioca
+              <a href="games.html" class="project-link">
+                <i class="fas fa-gamepad"></i> <span data-i18n="proj.games-link">Esplora i Giochi</span>
               </a>
             </div>
           </div>
@@ -526,7 +538,7 @@
           </div>
           <div class="project-info">
             <h3>Herbora &ndash; Erboristeria</h3>
-            <p>
+            <p data-i18n-html="proj.herbora-desc">
               Sito vetrina per erboristeria storica a Partanna (TP), attiva dal 1997.
               Design &ldquo;Botanical Editorial&rdquo; con palette organica crema/salvia/terracotta,
               animazioni clip-path, SVG botaniche inline, carosello prodotti drag-to-scroll,
@@ -539,7 +551,7 @@
             </div>
             <div class="project-links">
               <a href="https://enrix84.github.io/herbora/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-external-link-alt"></i> Visita il Sito
+                <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.herbora-link">Visita il Sito</span>
               </a>
             </div>
           </div>
@@ -564,7 +576,7 @@
           </div>
           <div class="project-info">
             <h3>Giuliana &amp; La Greca &ndash; Onoranze Funebri</h3>
-            <p>
+            <p data-i18n-html="proj.gl-desc">
               Sito vetrina per agenzia di onoranze funebri a Campobello di Licata (AG).
               Design dark elegante con palette nero/oro, animazioni fluide, integrazione WhatsApp
               per reperibilit&agrave; 24h, cookie consent GDPR compliant, Schema.org FuneralHome
@@ -576,7 +588,7 @@
             </div>
             <div class="project-links">
               <a href="https://enrix84.github.io/giulianalagreca/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-external-link-alt"></i> Visita il Sito
+                <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.gl-link">Visita il Sito</span>
               </a>
             </div>
           </div>
@@ -601,7 +613,7 @@
           </div>
           <div class="project-info">
             <h3>Studio Schembri &ndash; Consulenza Tributaria</h3>
-            <p>
+            <p data-i18n="proj.ss-desc">
               Sito vetrina per studio di consulenza tributaria e del lavoro attivo dal 1983,
               con sedi a Campobello di Licata e Ravanusa (AG).
               Design moderno con Tailwind CSS v4, palette verde foresta/sabbia/oro,
@@ -613,7 +625,7 @@
             </div>
             <div class="project-links">
               <a href="https://enrix84.github.io/studioschembri/" target="_blank" rel="noopener" class="project-link">
-                <i class="fas fa-external-link-alt"></i> Visita il Sito
+                <i class="fas fa-external-link-alt"></i> <span data-i18n="proj.ss-link">Visita il Sito</span>
               </a>
             </div>
           </div>
@@ -627,9 +639,9 @@
   <section class="section" id="contatti">
     <div class="container">
       <h2 class="section-title fade-in">
-        <span class="section-number">05.</span> Contatti
+        <span class="section-number">05.</span> <span data-i18n="contact.title">Contatti</span>
       </h2>
-      <p class="section-subtitle fade-in">Hai un progetto in mente? Scrivimi!</p>
+      <p class="section-subtitle fade-in" data-i18n="contact.subtitle">Hai un progetto in mente? Scrivimi!</p>
       <div class="contact-grid">
         <div class="contact-info fade-in">
           <div class="contact-item">
@@ -649,7 +661,7 @@
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div>
-              <h4>Posizione</h4>
+              <h4 data-i18n="contact.position">Posizione</h4>
               <span>Campobello di Licata (AG), Sicilia</span>
             </div>
           </div>
@@ -663,23 +675,23 @@
         </div>
         <form class="contact-form fade-in" id="contactForm">
           <div class="form-group">
-            <label for="name">Nome *</label>
-            <input type="text" id="name" name="name" required placeholder="Il tuo nome">
+            <label for="name" data-i18n="contact.form-name">Nome *</label>
+            <input type="text" id="name" name="name" required placeholder="Il tuo nome" data-i18n-placeholder="contact.placeholder-name">
           </div>
           <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required placeholder="La tua email">
+            <label for="email" data-i18n="contact.form-email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="La tua email" data-i18n-placeholder="contact.placeholder-email">
           </div>
           <div class="form-group">
-            <label for="subject">Oggetto</label>
-            <input type="text" id="subject" name="_subject" placeholder="Oggetto del messaggio">
+            <label for="subject" data-i18n="contact.form-subject">Oggetto</label>
+            <input type="text" id="subject" name="_subject" placeholder="Oggetto del messaggio" data-i18n-placeholder="contact.placeholder-subject">
           </div>
           <div class="form-group">
-            <label for="message">Messaggio *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Scrivi il tuo messaggio..."></textarea>
+            <label for="message" data-i18n="contact.form-message">Messaggio *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Scrivi il tuo messaggio..." data-i18n-placeholder="contact.placeholder-message"></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
-            <i class="fas fa-paper-plane"></i> Invia Messaggio
+            <i class="fas fa-paper-plane"></i> <span data-i18n="contact.btn-send">Invia Messaggio</span>
           </button>
           <div class="form-status" id="formStatus"></div>
         </form>
@@ -694,7 +706,7 @@
         <div class="footer-logo">
           <span class="logo-bracket">&lt;</span>EC<span class="logo-bracket">/&gt;</span>
         </div>
-        <p class="footer-text">Progettato e sviluppato con <span class="heart">&hearts;</span> da Enrico Maria Caruso</p>
+        <p class="footer-text" data-i18n-html="footer.text-html">Progettato e sviluppato con <span class="heart">&hearts;</span> da Enrico Maria Caruso</p>
         <div class="footer-social">
           <a href="https://github.com/enrix84" target="_blank" rel="noopener" aria-label="GitHub">
             <i class="fab fa-github"></i>
@@ -709,7 +721,7 @@
             <i class="fas fa-envelope"></i>
           </a>
         </div>
-        <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Enrico Maria Caruso. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a></p>
+        <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Enrico Maria Caruso. <span data-i18n="footer.rights">Tutti i diritti riservati.</span> | <a href="cookie-policy.html">Cookie Policy</a></p>
       </div>
     </div>
   </footer>
@@ -717,19 +729,20 @@
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-content">
-      <p>Questo sito utilizza servizi di terze parti (Google Fonts, Font Awesome, FormSubmit) che potrebbero raccogliere dati tecnici come l'indirizzo IP. Per maggiori informazioni consulta la <a href="cookie-policy.html">Cookie Policy</a>.</p>
+      <p data-i18n-html="cookie.text-html">Questo sito utilizza servizi di terze parti (Google Fonts, Font Awesome, FormSubmit) che potrebbero raccogliere dati tecnici come l'indirizzo IP. Per maggiori informazioni consulta la <a href="cookie-policy.html">Cookie Policy</a>.</p>
       <div class="cookie-buttons">
-        <button class="btn btn-primary btn-cookie" id="cookieAccept">Accetta</button>
-        <button class="btn btn-outline btn-cookie" id="cookieReject">Rifiuta</button>
+        <button class="btn btn-primary btn-cookie" id="cookieAccept" data-i18n="cookie.accept">Accetta</button>
+        <button class="btn btn-outline btn-cookie" id="cookieReject" data-i18n="cookie.reject">Rifiuta</button>
       </div>
     </div>
   </div>
 
   <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" aria-label="Torna su">
+  <button class="back-to-top" id="backToTop" aria-label="Torna su" data-i18n-aria="backtop-aria">
     <i class="fas fa-chevron-up"></i>
   </button>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
   <script>document.querySelectorAll('.auto-exp').forEach(function(el){el.textContent=new Date().getFullYear()-2011});</script>
 </body>

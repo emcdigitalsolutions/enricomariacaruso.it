@@ -129,7 +129,7 @@ contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   submitBtn.disabled = true;
-  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Invio in corso...';
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + I18N.t('form.sending');
   formStatus.textContent = '';
   formStatus.className = 'form-status';
 
@@ -147,17 +147,17 @@ contactForm.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      formStatus.textContent = 'Messaggio inviato con successo! Ti risponder\u00f2 al pi\u00f9 presto.';
+      formStatus.textContent = I18N.t('form.success');
       formStatus.className = 'form-status success';
       contactForm.reset();
     } else {
       throw new Error('Errore invio');
     }
   } catch {
-    formStatus.textContent = 'Si \u00e8 verificato un errore. Riprova o scrivimi direttamente a carusoenricom@gmail.com';
+    formStatus.textContent = I18N.t('form.error');
     formStatus.className = 'form-status error';
   } finally {
     submitBtn.disabled = false;
-    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Invia Messaggio';
+    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> ' + I18N.t('form.btn-send');
   }
 });
