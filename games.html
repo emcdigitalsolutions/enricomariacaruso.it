@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Games - Enrico Maria Caruso</title>
+  <meta name="description" content="A collection of 10 HTML5 games built with Vanilla JavaScript and Canvas API. Zero dependencies, mobile-ready, playable in any browser.">
+  <meta name="author" content="Enrico Maria Caruso">
+  <meta property="og:title" content="HTML5 Games - Enrico Maria Caruso">
+  <meta property="og:description" content="10 HTML5 games built with Vanilla JS and Canvas API. Play them now!">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* ===== Games Page Specific ===== */
+    .games-hero {
+      padding: 140px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .games-hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .games-hero-bg .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.3;
+    }
+
+    .games-hero-bg .hero-shape-1 {
+      width: 500px;
+      height: 500px;
+      background: rgba(124, 92, 252, 0.3);
+      top: -150px;
+      right: -100px;
+      animation: float1 20s ease-in-out infinite;
+    }
+
+    .games-hero-bg .hero-shape-2 {
+      width: 350px;
+      height: 350px;
+      background: rgba(255, 107, 157, 0.2);
+      bottom: -80px;
+      left: -50px;
+      animation: float2 25s ease-in-out infinite;
+    }
+
+    .games-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .games-hero-content h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .games-hero-content p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .tech-badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .tech-badges span {
+      padding: 6px 14px;
+      background: rgba(124, 92, 252, 0.08);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ===== Games Grid ===== */
+    .games-section {
+      padding: 40px 0 100px;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .game-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .game-card:hover {
+      border-color: var(--border-color);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .game-preview {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .game-preview .game-emoji {
+      font-size: 3.5rem;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 20px rgba(124, 92, 252, 0.4));
+    }
+
+    .game-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.6;
+    }
+
+    /* Individual game gradients */
+    .game-card:nth-child(1) .game-preview::before { background: linear-gradient(135deg, #0a1628 0%, #1a0a2e 50%, #00f5d4 200%); }
+    .game-card:nth-child(2) .game-preview::before { background: linear-gradient(135deg, #1a0a2e 0%, #2a0a1e 50%, #f700ff 200%); }
+    .game-card:nth-child(3) .game-preview::before { background: linear-gradient(135deg, #0a1628 0%, #0a2818 50%, #39ff14 200%); }
+    .game-card:nth-child(4) .game-preview::before { background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #7b00ff 200%); }
+    .game-card:nth-child(5) .game-preview::before { background: linear-gradient(135deg, #1a0a2e 0%, #2a0a1e 50%, #ff00aa 200%); }
+    .game-card:nth-child(6) .game-preview::before { background: linear-gradient(135deg, #0a1a0a 0%, #1a2e0a 50%, #00f5d4 200%); }
+    .game-card:nth-child(7) .game-preview::before { background: linear-gradient(135deg, #1a0800 0%, #2a1000 50%, #ff6d00 200%); }
+    .game-card:nth-child(8) .game-preview::before { background: linear-gradient(135deg, #0a1628 0%, #0a2828 50%, #00e5ff 200%); }
+    .game-card:nth-child(9) .game-preview::before { background: linear-gradient(135deg, #1a0a2e 0%, #0a1a2e 50%, #f700ff 200%); }
+    .game-card:nth-child(10) .game-preview::before { background: linear-gradient(135deg, #0a0a1a 0%, #1a1a0a 50%, #00f5d4 200%); }
+
+    .game-preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124, 92, 252, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 92, 252, 0.04) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .game-body {
+      padding: 20px 20px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .game-body h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .game-body p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .game-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .game-tags span {
+      padding: 3px 10px;
+      background: rgba(124, 92, 252, 0.06);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .game-play-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 20px;
+      background: var(--gradient-main);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: 0 4px 16px rgba(124, 92, 252, 0.25);
+    }
+
+    .game-play-btn:hover {
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(124, 92, 252, 0.4);
+    }
+
+    /* ===== Nav active state for Games ===== */
+    .nav-links a.active {
+      color: var(--text-primary);
+      background: rgba(124, 92, 252, 0.1);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .games-hero {
+        padding: 120px 20px 40px;
+      }
+
+      .games-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>EC<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#chi-sono">Chi Sono</a></li>
+        <li><a href="index.html#competenze">Competenze</a></li>
+        <li><a href="index.html#esperienze">Esperienze</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="games.html" class="active">Games</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="games-hero">
+    <div class="games-hero-bg">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </div>
+    <div class="games-hero-content">
+      <h1><span class="gradient-text">HTML5 Games</span></h1>
+      <p>A collection of 10 arcade games built from scratch with Vanilla JavaScript and Canvas API. Zero dependencies, single-file, mobile-responsive &mdash; playable right in your browser.</p>
+      <div class="tech-badges">
+        <span>Vanilla JavaScript</span>
+        <span>HTML5 Canvas</span>
+        <span>Web Audio API</span>
+        <span>Zero Dependencies</span>
+        <span>Mobile Ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Grid -->
+  <section class="games-section">
+    <div class="games-grid">
+
+      <!-- 1. Stack Tower -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#127959;&#65039;</div>
+        </div>
+        <div class="game-body">
+          <h3>Stack Tower</h3>
+          <p>Tap to drop blocks and build the tallest tower. Perfect alignment triggers combo bonuses. 3 skins, progressive difficulty.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/stack-tower/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Color Switch -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#127912;</div>
+        </div>
+        <div class="game-body">
+          <h3>Color Switch</h3>
+          <p>Jump through obstacles matching your ball's color. Collect stars to switch colors. 3 obstacle types, 4-color system.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/color-switch/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Neon Invaders -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#128126;</div>
+        </div>
+        <div class="game-body">
+          <h3>Neon Invaders</h3>
+          <p>Destroy waves of aliens before they reach the bottom. Shields, UFO bonuses, 3 alien types, progressive waves.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/neon-invaders/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. Void Drift -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#128640;</div>
+        </div>
+        <div class="game-body">
+          <h3>Void Drift</h3>
+          <p>Navigate asteroid fields, destroy rocks and survive wave after wave. Inertia physics, screen wrap, vector graphics.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/void-drift/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. Neon Breaker -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#129521;</div>
+        </div>
+        <div class="game-body">
+          <h3>Neon Breaker</h3>
+          <p>Break all the bricks with the ball. 4 brick types, 6 power-ups, 6 levels, multi-ball action and combo scoring.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>6 Power-ups</span>
+          </div>
+          <a href="https://enrix84.github.io/neon-breaker/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. Neon Snake -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#128013;</div>
+        </div>
+        <div class="game-body">
+          <h3>Neon Snake</h3>
+          <p>Eat food to grow longer without hitting yourself. Bonus food for extra points. Wall wrap on Easy mode, D-pad on mobile.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/neon-snake/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. Neon Runner -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#127939;</div>
+        </div>
+        <div class="game-body">
+          <h3>Neon Runner</h3>
+          <p>Jump over obstacles and collect coins in this endless runner. Double jump, progressive speed, milestone rewards.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/neon-runner/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 8. Neon Blocks -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#129513;</div>
+        </div>
+        <div class="game-body">
+          <h3>Neon Blocks</h3>
+          <p>Complete rows to clear them and score combos. 7 tetrominos, ghost piece, wall kicks, bag randomizer.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/neon-blocks/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 9. Neon 2048 -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#128290;</div>
+        </div>
+        <div class="game-body">
+          <h3>Neon 2048</h3>
+          <p>Slide tiles to merge equal numbers and reach 2048. Undo system, dynamic grid size, endless mode after winning.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/neon-2048/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+      <!-- 10. Neon Pong -->
+      <div class="game-card fade-in">
+        <div class="game-preview">
+          <div class="game-emoji">&#127955;</div>
+        </div>
+        <div class="game-body">
+          <h3>Neon Pong</h3>
+          <p>Move your paddle and beat the AI. Angle-based bouncing, ball trail effect, progressive speed per rally.</p>
+          <div class="game-tags">
+            <span>Canvas</span><span>Web Audio</span><span>3 Skins</span>
+          </div>
+          <a href="https://enrix84.github.io/neon-pong/" target="_blank" rel="noopener" class="game-play-btn">
+            <i class="fas fa-play"></i> Play Now
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>EC<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-text">Progettato e sviluppato con <span class="heart">&hearts;</span> da Enrico Maria Caruso</p>
+        <div class="footer-social">
+          <a href="https://github.com/enrix84" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/enrico-maria-caruso-56660729/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://xbrowser.altervista.org/" target="_blank" rel="noopener" aria-label="Blog">
+            <i class="fas fa-blog"></i>
+          </a>
+          <a href="mailto:carusoenricom@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p class="footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Enrico Maria Caruso. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a></p>
+        <a href="https://www.enricomariacaruso.it" target="_blank" rel="noopener" title="Progettato e Sviluppato da Enrico Maria Caruso" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;opacity:0.4;font-size:11px;text-decoration:none;color:inherit;"><span>Progettato e Sviluppato da</span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" height="18"><defs><linearGradient id="emcG" x1="0" y1="0" x2="120" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="45%" stop-color="#06d6a0"/><stop offset="100%" stop-color="#e8e8f0"/></linearGradient><linearGradient id="emcIG" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7c5cfc"/><stop offset="100%" stop-color="#06d6a0"/></linearGradient></defs><path d="M4,4 H24 L32,8 L24,12 H4 A4,4 0 0,1 4,4Z" fill="url(#emcIG)"/><path d="M4,15 H20 L28,19 L20,23 H4 A4,4 0 0,1 4,15Z" fill="url(#emcIG)" opacity="0.85"/><path d="M4,26 H24 L32,30 L24,34 H4 A4,4 0 0,1 4,26Z" fill="url(#emcIG)"/><text x="46" y="27" font-family="'Space Grotesk','Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="700" fill="url(#emcG)" letter-spacing="3">EMC</text></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Torna su">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 300);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Fade-in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
