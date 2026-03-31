@@ -6,7 +6,6 @@
     "nav.chi-sono": "About Me",
     "nav.competenze": "Skills",
     "nav.esperienze": "Experience",
-    "nav.portfolio": "Portfolio",
     "nav.games": "Games",
     "nav.contatti": "Contact",
 
@@ -14,7 +13,6 @@
     "hero.greeting": "Hi, I'm",
     "hero.title": "Full Stack Developer & Computer Science Teacher",
     "hero.subtitle-html": "Turning ideas into code, experience into teaching.<br>Over <span class=\"auto-exp\">15</span> years of passion for software development.",
-    "hero.btn-projects": "My Projects",
     "hero.btn-contact": "Contact Me",
     "hero.scroll-aria": "Scroll down",
 
@@ -61,30 +59,7 @@
     "edu.degree3": "Technical Diploma in Computer Science",
     "edu.degree3-inst": "ITIS \u201cE. Torricelli\u201d \u2013 Sant'Agata di Militello (ME)",
 
-    // Portfolio (Section 04)
-    "portfolio.title": "Portfolio",
-    "portfolio.subtitle": "A selection of the projects I've built",
-
-    // Project descriptions
-    "proj.gf-desc": "E-commerce website for a designer clothing outlet for kids and teens (0-16 years). Elegant gold & dark design with Stripe integration for Gift Card purchases, collection gallery, store locator with maps and contact system.",
-    "proj.gf-link": "Visit Website",
-    "proj.prenoty-desc": "Mobile and web application for appointment booking. Connects users and businesses (hairdressers, salons, etc.) with a real-time booking system, verified reviews, automatic notifications and built-in chat. Flexible pricing plans for businesses.",
-    "proj.prenoty-link": "Visit Website",
-    "proj.kb-desc": "Showcase website for a children's clothing shop (0-16 years). Vibrant and colorful design with pink & blue palette, confetti animations, Gift Card system with Stripe payment, collection gallery, store map and integration with StockFlow ERP for inventory and sales.",
-    "proj.kb-link": "Visit Website",
-    "proj.sf-desc": "Cloud management system for retail: inventory, sales, gift cards and website integrated in a single multi-tenant SaaS platform. Includes inventory with variants (sizes, colors), POS, inter-store transfers, loyalty program, digital gift cards with Stripe, customizable tenant branding, advanced reporting and real-time analytics.",
-    "proj.sf-link1": "Product Website",
-    "proj.sf-link2": "Demo App",
-    "proj.games-desc": "Collection of 10 HTML5 arcade games developed in Vanilla JavaScript and Canvas API. Stack Tower, Color Switch, Neon Invaders, Void Drift, Neon Breaker, Neon Snake, Neon Runner, Neon Blocks, Neon 2048 and Neon Pong. Each game is a single HTML file with zero dependencies, customizable neon skins, local leaderboard, procedural sounds via Web Audio API and mobile-first design.",
-    "proj.games-link": "Explore Games",
-    "proj.herbora-desc": "Showcase website for a historic herbal shop in Partanna (TP), active since 1997. \u201cBotanical Editorial\u201d design with organic cream/sage/terracotta palette, clip-path animations, inline botanical SVGs, drag-to-scroll product carousel, real-time \u201cOpen/Closed\u201d indicator, Google Maps reviews section and conditional Google Maps cookie consent.",
-    "proj.herbora-link": "Visit Website",
-    "proj.gl-desc": "Showcase website for a funeral home in Campobello di Licata (AG). Elegant dark design with black/gold palette, fluid animations, WhatsApp integration for 24h availability, GDPR-compliant cookie consent, Schema.org FuneralHome and comprehensive services section (cremation, transport, photo ceramics).",
-    "proj.gl-link": "Visit Website",
-    "proj.ss-desc": "Showcase website for a tax and labor consulting firm active since 1983, with offices in Campobello di Licata and Ravanusa (AG). Modern design with Tailwind CSS v4, forest green/sand/gold palette, services section (tax, labor, CAF), GDPR cookie consent and Schema.org.",
-    "proj.ss-link": "Visit Website",
-
-    // Contatti (Section 05)
+    // Contatti (Section 04)
     "contact.title": "Contact",
     "contact.subtitle": "Have a project in mind? Write to me!",
     "contact.position": "Location",
