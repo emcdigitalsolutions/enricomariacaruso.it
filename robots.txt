@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /logo/
+
+Sitemap: https://www.enricomariacaruso.it/sitemap.xml
