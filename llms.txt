@@ -1,0 +1,16 @@
+# Enrico Maria Caruso - Full Stack Developer & Docente
+
+> Portfolio personale di Enrico Maria Caruso - Full Stack Developer, Docente e IoT Specialist con oltre 15 anni di esperienza.
+
+## Sito ufficiale
+- URL: https://www.enricomariacaruso.it/
+- Email: carusoenricom@gmail.com
+
+## Sezioni / argomenti del sito
+- 01. Chi Sono
+- 02. Competenze
+- 03. Esperienze
+- 04. Contatti
+
+## Note
+Questo documento riepiloga il sito per assistenti AI e motori di ricerca. Per informazioni sempre aggiornate fare riferimento al sito ufficiale indicato sopra.
