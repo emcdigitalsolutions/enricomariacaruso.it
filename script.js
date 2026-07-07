@@ -133,26 +133,31 @@ contactForm.addEventListener('submit', async (e) => {
   formStatus.textContent = '';
   formStatus.className = 'form-status';
 
-  const formData = new FormData(contactForm);
-  const data = Object.fromEntries(formData);
+  const fd = new FormData(contactForm);
+  const subject = (fd.get('_subject') || '').toString().trim();
+  const body = (fd.get('message') || '').toString().trim();
+  const payload = {
+    site: 'enricomariacaruso',
+    name: (fd.get('name') || '').toString().trim(),
+    email: (fd.get('email') || '').toString().trim(),
+    phone: '',
+    message: (subject ? '[' + subject + '] ' : '') + body
+  };
+
+  // Servizio contatti Google Apps Script condiviso EMC (routing per 'site')
+  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxLCgN0-mHN86Dk37a5m-p2A3DgMjc8b__aCO_9oBA_amLUn5MlipebKalo5qNIoSWl/exec';
 
   try {
-    const response = await fetch('https://formsubmit.co/ajax/emcdigitalsolution@gmail.com', {
+    await fetch(ENDPOINT, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(data)
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
     });
-
-    if (response.ok) {
-      formStatus.textContent = I18N.t('form.success');
-      formStatus.className = 'form-status success';
-      contactForm.reset();
-    } else {
-      throw new Error('Errore invio');
-    }
+    // Con mode:'no-cors' la risposta è opaca: consideriamo l'invio riuscito
+    formStatus.textContent = I18N.t('form.success');
+    formStatus.className = 'form-status success';
+    contactForm.reset();
   } catch {
     formStatus.textContent = I18N.t('form.error');
     formStatus.className = 'form-status error';
