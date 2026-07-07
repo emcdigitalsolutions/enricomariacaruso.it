@@ -85,7 +85,7 @@
     "footer.designed-by": "Designed and Developed by",
 
     // Cookie banner
-    "cookie.text-html": "This website uses third-party services (Google Fonts, Font Awesome, FormSubmit) that may collect technical data such as your IP address. For more information, see the <a href=\"cookie-policy.html\">Cookie Policy</a>.",
+    "cookie.text-html": "This website uses third-party services (Google Fonts, Font Awesome, Google Apps Script) that may collect technical data such as your IP address. For more information, see the <a href=\"cookie-policy.html\">Cookie Policy</a>.",
     "cookie.accept": "Accept",
     "cookie.reject": "Decline",
 
