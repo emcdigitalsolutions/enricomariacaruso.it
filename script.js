@@ -137,7 +137,7 @@ contactForm.addEventListener('submit', async (e) => {
   const data = Object.fromEntries(formData);
 
   try {
-    const response = await fetch('https://formsubmit.co/ajax/carusoenricom@gmail.com', {
+    const response = await fetch('https://formsubmit.co/ajax/emcdigitalsolution@gmail.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

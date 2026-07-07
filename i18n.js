@@ -24,7 +24,6 @@
     "about.location": "Campobello di Licata (AG), Sicily",
     "about.degree": "Master's Degree in Computer Science",
     "about.university": "University of Pisa",
-    "about.blog": "My Blog",
     "about.stat-exp": "Years of Experience",
     "about.stat-projects": "Completed Projects",
     "about.stat-tech": "Technologies",
@@ -63,6 +62,7 @@
     "contact.title": "Contact",
     "contact.subtitle": "Have a project in mind? Write to me!",
     "contact.position": "Location",
+    "contact.website": "Website",
     "contact.form-name": "Name *",
     "contact.form-email": "Email *",
     "contact.form-subject": "Subject",
@@ -76,7 +76,7 @@
     // Form status messages (used by script.js via I18N.t())
     "form.sending": "Sending...",
     "form.success": "Message sent successfully! I'll reply as soon as possible.",
-    "form.error": "An error occurred. Please try again or email me directly at carusoenricom@gmail.com",
+    "form.error": "An error occurred. Please try again or email me directly at emcdigitalsolution@gmail.com",
     "form.btn-send": "Send Message",
 
     // Footer
