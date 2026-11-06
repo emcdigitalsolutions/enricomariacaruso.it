@@ -58,6 +58,11 @@
     "edu.degree3": "Technical Diploma in Computer Science",
     "edu.degree3-inst": "ITIS \u201cE. Torricelli\u201d \u2013 Sant'Agata di Militello (ME)",
 
+    // Projects
+    "proj.title": "Projects",
+    "proj.sartonero-desc": "Management software for clothing stores that I designed and built with EMC Digital Solutions: a till that keeps working without a connection, stock by size and colour across several shops, gift cards and loyalty cards.",
+    "proj.sartonero-link": "Discover the Sartonero software",
+
     // Contatti (Section 04)
     "contact.title": "Contact",
     "contact.subtitle": "Have a project in mind? Write to me!",

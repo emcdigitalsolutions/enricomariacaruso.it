@@ -12,5 +12,8 @@
 - 03. Esperienze
 - 04. Contatti
 
+## Progetti
+- Sartonero, gestionale per negozi di abbigliamento (cassa, magazzino per taglie e colori, più punti vendita, gift card, fidelity card), sviluppato con EMC Digital Solutions: https://sartonero.it/
+
 ## Note
 Questo documento riepiloga il sito per assistenti AI e motori di ricerca. Per informazioni sempre aggiornate fare riferimento al sito ufficiale indicato sopra.
